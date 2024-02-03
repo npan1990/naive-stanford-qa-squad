@@ -1,0 +1,39 @@
+{% extends "question_answer_backend/main.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-8">
+      <form action="/try" method="POST">
+        {% csrf_token %}
+      <div class="form-group">
+      <h2>Enter your Context</h2>
+        <textarea class="form-control" id="context" name="context"></textarea>
+      <h2>Enter your Question</h2>
+        <textarea id="question" name="question" class="form-control"></textarea>
+      <h2>Model</h2>
+        <div>
+        <select id="model_id" name="model_id" class="form-control form-control-lg">
+          <option value="trained">
+            Trained
+          </option>
+          <option value="pretrained">
+            Pretrained
+          </option>
+        </select>
+        </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Answer please.</button>
+      </form>
+      <h2>Answer?</h2>
+        <p>Answer: {{answer}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+{%endblock%}
