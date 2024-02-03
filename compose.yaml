@@ -1,0 +1,40 @@
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  backend:
+    build:
+      context: backend/
+    restart:
+      always
+    networks:
+      - app-tier
+    depends_on:
+      - kafka
+      - mongo
+    ports:
+      - "80:80"
+    environment:
+      - API_URL=http://model_api:5000
+  model_api:
+    build: model_api/
+    restart:
+      always
+    ports:
+      - "5000:5000"
+    networks:
+      - app-tier
+    environment:
+      - MODEL_ID=npan1990/test
+      - HF_TOKEN=<READ TOKEN>
+      - DEVICE=cpu
+  qa_squad:
+    build:
+      context: .
+    restart:
+      always
+    networks:
+      - app-tier
+    environment:
+       - HF_TOKEN=<WRITE TOKEN>
