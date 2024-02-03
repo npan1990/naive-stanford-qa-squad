@@ -10,6 +10,10 @@ from qa_squad.config.configuration import GLOVE_EMBEDDINGS_100_WORDS_TXT
 from qa_squad.models.layers import CharacterEmbeddingLayer, ContextualEmbeddingLayer
 from qa_squad.models.tokenizers import BiDAFTokenizer
 
+"""
+Layers taken from BiDAF Tutorials.
+"""
+
 
 class BiDAF(nn.Module):
 
