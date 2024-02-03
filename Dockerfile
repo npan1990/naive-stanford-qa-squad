@@ -1,7 +1,9 @@
 FROM python:3.8
 
 WORKDIR /app
-COPY . .
+COPY qa_squad .
+COPY pyproject.toml .
+COPY poetry.lock .
 
 RUN apt-get update && \
     apt-get install -y htop && \

@@ -16,7 +16,7 @@ services:
     ports:
       - "80:80"
     environment:
-      - API_URL=http://model_api:5000
+      - API_URL=http://model_api:5000/
   model_api:
     build: model_api/
     restart:

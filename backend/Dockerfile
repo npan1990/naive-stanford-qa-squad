@@ -7,4 +7,4 @@ RUN apt-get update && \
     pip install requests
 
 EXPOSE 80
-CMD python manage.py runserver 0.0.0.0:80
+CMD python squad_backend/manage.py runserver 0.0.0.0:80
