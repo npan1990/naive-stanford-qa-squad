@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "naive-stanford-qa-squad"
+version = "0.1.0"
+description = ""
+authors = ["Nikolaos Panagiotou <npan1990@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+spacy = "^3.7.2"
+pandas = "<2"
+tqdm = "^4.66.1"
+nltk = "^3.8.1"
+click = "^8.1.7"
+numpy = "1.19"
+torch = "^2.2.0"
+ujson = "^5.9.0"
+loguru = "^0.7.2"
+transformers = "^4.37.2"
+accelerate = "^0.26.1"
+tensorboard = "<=2.0"
+protobuf = "3.20"
+fastapi = "^0.109.1"
+uvicorn = "^0.27.0.post1"
+django = "<4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

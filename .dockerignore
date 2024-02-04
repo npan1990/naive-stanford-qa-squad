@@ -1,0 +1,4 @@
+*.txt
+*.bin
+data/
+notebooks/
