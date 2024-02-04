@@ -5,6 +5,10 @@
 
 A sample collection of notebooks focused in solving the SQUAD v2.0 using traditional machine learning as well as embedding approaches.
 
+# Demo
+
+[SQUAD QA](http://http://ec2-16-170-163-223.eu-north-1.compute.amazonaws.com)
+
 # Contents
 
 * qa_squad A package that implements various operations related to Q models.
