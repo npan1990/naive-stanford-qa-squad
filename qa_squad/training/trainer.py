@@ -183,7 +183,7 @@ class BiDAFTrainer:
 
             f1s.append(f1)
 
-            if predicted_answer_s == correct_answer_s:
+            if ' '.join(predicted_answer) == ' '.join(correct_answer):
                 ems.append(1)
             else:
                 ems.append(0)
