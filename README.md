@@ -7,7 +7,7 @@ A sample collection of notebooks focused in solving the SQUAD v2.0 using traditi
 
 # Demo
 
-[SQUAD QA](http://http://ec2-16-170-163-223.eu-north-1.compute.amazonaws.com)
+[SQUAD QA](http://ec2-16-170-163-223.eu-north-1.compute.amazonaws.com)
 
 # Contents
 
