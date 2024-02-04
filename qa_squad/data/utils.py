@@ -283,7 +283,7 @@ class DataProcessor:
 
 @click.command()
 @click.option('--directory', default='./data/squad/', help='directory')
-def create_dataset(directory):
+def bidaf_create_dataset(directory):
     """
     Create a dataset for machine learning.
     Args:
@@ -297,4 +297,4 @@ def create_dataset(directory):
 
 # TODO: Replace with test
 if __name__ == '__main__':
-    create_dataset()
+    bidaf_create_dataset()
