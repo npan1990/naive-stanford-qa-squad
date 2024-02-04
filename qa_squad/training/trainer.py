@@ -10,7 +10,7 @@ import click
 import numpy as np
 
 from qa_squad.config.configuration import GLOVE_EMBEDDINGS_100_WORDS_TXT
-from qa_squad.data.datasets import SquadDataset
+from qa_squad.data.bidaf_datasets import SquadDataset
 from qa_squad.models.bidaf import BiDAF
 from qa_squad.models.tokenizers import BiDAFTokenizer
 
