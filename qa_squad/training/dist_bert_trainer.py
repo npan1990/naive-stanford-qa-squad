@@ -14,9 +14,22 @@ HUB_TOKEN = os.getenv('HUB_TOKEN', '')
 
 class DistilBERTTrainer:
 
-    def __init__(self, trainset: str, devset: str, max_length: int = 1024, checkpoint: str = "distilbert-base-uncased",
+    def __init__(self, trainset: str, devset: str, max_length: int = 512, checkpoint: str = "distilbert-base-uncased",
                  lr: float = 1e-4, batch_size: int = 8, organization: str = "",
                  saved_model: str = 'qa', epochs: int = 5):
+        """
+        DistBERT Trainer for the QA.
+        Args:
+            trainset(str): SQUAD 2 trainset.
+            devset(str): SQUAD 2 devset.
+            max_length(int): Max length. Default 512.
+            checkpoint(str): The HF checkpoint.
+            lr(str): Learning rate.
+            batch_size(int): Batch size.
+            organization(str): The organization to use for model uploading.
+            saved_model(str): The model name.
+            epochs(int): Number of epochs.
+        """
         self.tokenizer = AutoTokenizer.from_pretrained(checkpoint, padding="max_length", max_length=max_length,
                                                        truncation=True)
 
@@ -64,6 +77,10 @@ class DistilBERTTrainer:
 @click.option('--saved_model', type=click.STRING, default='squad-distil-bert', help='Model alias.')
 def distil_bert_qa_train(processed_dataset: str, eval_dataset: str,
                          epochs: int, batch_size: int, organization: str, saved_model: str):
+    """
+    \b
+    Train a DistilBERT model for the SQUAD 2!
+    """
     distil_bert_trainer = DistilBERTTrainer(processed_dataset, eval_dataset, epochs=epochs, batch_size=batch_size,
                                             organization=organization, saved_model=saved_model)
     distil_bert_trainer.train()
